@@ -1,7 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeItemFromCart, clearCart, increaseItemQuantity, decreaseItemQuantity } from './CartSlice'; // Assuming you have action creators for increasing and decreasing item quantity
-import './ShoppingCart.css'; // Import CSS file for component-specific styles
+import './ShoppingCart.css'; // Import CSS file for component-specific styles;
+import SuperCoin from './SuperCoin';
 
 const ShoppingCart = () => {
   const dispatch = useDispatch();
@@ -44,6 +45,7 @@ const ShoppingCart = () => {
         <button className="clear-cart-btn" onClick={handleClearCart}>Clear Cart</button>
       </div>
       <div>{totalAmount ? <div>'The total amount is {totalAmount}</div> : ''}</div>
+      {totalAmount>=100 ? <SuperCoin/> : ''}
     </>
   );
 };
